@@ -10,14 +10,14 @@ data_gaji = {
     7 : {"gapok" : 7000000, "tunjangan" : 700000, "transfortasi" : 700000, "uang_makan": 0, "lemburan": 0},
     8 : {"gapok" : 8000000, "tunjangan" : 800000, "transfortasi" : 800000, "uang_makan": 0, "lemburan": 0},
     9 : {"gapok" : 9000000, "tunjangan" : 900000, "transfortasi" : 900000, "uang_makan": 0, "lemburan": 0},
-    10 : {"gapok" : 10000000, "tunjangan" : 1000000, "transfortasi" : 1000000, "uang_makan": 0}
+    10 : {"gapok" : 10000000, "tunjangan" : 1000000, "transfortasi" : 1000000, "uang_makan": 0, "lemburan": 0}
 }
 
 kehadiran = int(input("Jumlah kehadiran dalam 1 Bulan (*25 hari) = "))
 grade = int(input("Grade (1 ~ 10) = "))
 jumlah_lemburan = int(input("Jumlah jam lembur = "))
 
-if (kehadiran < 0):
+if (kehadiran <= 0):
     print("Maaf, Anda tidak berkerja, maka tidak ada gaji")
 else:
     if grade in data_gaji:
