@@ -1,5 +1,5 @@
 print('Perhitungan Gaji\n')
-print(43*"=")
+
 data_gaji = {
     1 : {"gapok" : 1000000, "tunjangan" : 100000, "transfortasi" : 100000, "uang_makan": 250000, "lemburan": 15000},
     2 : {"gapok" : 2000000, "tunjangan" : 200000, "transfortasi" : 200000, "uang_makan": 250000, "lemburan": 20000},
@@ -17,8 +17,6 @@ kehadiran = int(input("Jumlah kehadiran dalam 1 Bulan (*25 hari) = "))
 grade = int(input("Grade (1 ~ 10) = "))
 jumlah_lemburan = int(input("Jumlah jam lembur = "))
 
-pemotongan = kehadiran / 25
-
 if (kehadiran <= 0):
     print("Maaf, Anda tidak berkerja, maka tidak ada gaji")
 else:
@@ -33,11 +31,12 @@ else:
 
         lemburan = jumlah_lemburan * lemburan
 
-        total_gaji = pemotongan * gapok + tunjangan + transportasi + uang_makan + lemburan
-        print(43*"=")
+        if (kehadiran < 25):
+            pemotongan = gapok * (25 - kehadiran) / 25
+        else:
+            pemotongan = 0
+        total_gaji = gapok + tunjangan + transportasi + uang_makan + lemburan - pemotongan
         print(f"Total gaji Anda: Rp {total_gaji:,.2f}")
-        print(43*"=")
     else:
         print("Jabatan tidak ditemukan")
-
 
