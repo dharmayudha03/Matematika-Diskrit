@@ -19,6 +19,7 @@ jumlah_lemburan = int(input("Jumlah jam lembur = "))
 
 pemotongan = kehadiran / 25
 
+
 if (kehadiran <= 0):
     print("Maaf, Anda tidak berkerja, maka tidak ada gaji")
 else:
