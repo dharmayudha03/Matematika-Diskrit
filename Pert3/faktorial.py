@@ -5,4 +5,8 @@ def faktorial(n):
         hasil *= i
         print(i)
     return hasil
-print(faktorial(3))
+
+input_user = int(input("Masukan Nilai Faktorial: "))
+hasil_faktorial = faktorial(input_user)
+
+print(f"Hasil dari faktorial {input_user} adalah {hasil_faktorial}")
