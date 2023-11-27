@@ -7,38 +7,40 @@ def print_matriks(matriks, label):
         print(baris)
 
 def tambah_matriks(ordo_a, ordo_b):
-    if ordo_a[0] == ordo_b[1]:  # Pengecekan apakah jumlah baris matriks A sama dengan jumlah kolom matriks B
-        matriks_a = [[int(input(f"Masukkan elemen matriks A[{i}][{j}]: ")) for j in range(ordo_a[0])] for i in range(ordo_a[1])]
-        matriks_b = [[int(input(f"Masukkan elemen matriks B[{i}][{j}]: ")) for j in range(ordo_b[0])] for i in range(ordo_b[1])]
-
+    if ordo_a[1] == ordo_b[0]:
+        matriks_a = [[int(input(f"Masukkan elemen matriks A[{i}][{j}]: ")) for j in range(ordo_a[1])] for i in range(ordo_a[0])]
         print_equals()
         print_matriks(matriks_a, "A")
+
+        matriks_b = [[int(input(f"Masukkan elemen matriks B[{i}][{j}]: ")) for j in range(ordo_b[1])] for i in range(ordo_b[0])]
+        print_equals()
         print_matriks(matriks_b, "B")
 
         hasil = [[matriks_a[i][j] + matriks_b[i][j] for j in range(ordo_b[1])] for i in range(ordo_a[0])]
         return hasil
     else:
-        print("Matriks ordo yang Anda ingin jumlahkan tidak bisa. Jumlah baris matriks A harus sama dengan jumlah kolom matriks B.")
+        print("Matriks dengan ordo ini tidak dapat dijumlahkan. Jumlah baris matriks A harus sama dengan jumlah kolom matriks B.")
         return None
 
 def kali_matriks(ordo_a, ordo_b):
-    if ordo_a[0] == ordo_b[1]:  # Pengecekan apakah jumlah baris matriks A sama dengan jumlah kolom matriks B
-        matriks_a = [[int(input(f"Masukkan elemen matriks A[{i}][{j}]: ")) for j in range(ordo_a[0])] for i in range(ordo_a[1])]
-        matriks_b = [[int(input(f"Masukkan elemen matriks B[{i}][{j}]: ")) for j in range(ordo_b[0])] for i in range(ordo_b[1])]
-
+    if ordo_a[1] == ordo_b[0]:
+        matriks_a = [[int(input(f"Masukkan elemen matriks A[{i}][{j}]: ")) for j in range(ordo_a[1])] for i in range(ordo_a[0])]
         print_equals()
         print_matriks(matriks_a, "A")
+
+        matriks_b = [[int(input(f"Masukkan elemen matriks B[{i}][{j}]: ")) for j in range(ordo_b[1])] for i in range(ordo_b[0])]
+        print_equals()
         print_matriks(matriks_b, "B")
 
         hasil = [[sum(matriks_a[i][k] * matriks_b[k][j] for k in range(ordo_b[1])) for j in range(ordo_b[1])] for i in range(ordo_a[0])]
         return hasil
     else:
-        print("Matriks ordo yang Anda ingin perkaliankan tidak bisa. Jumlah baris matriks A harus sama dengan jumlah kolom matriks B.")
+        print("Matriks dengan ordo ini tidak dapat dikalikan. Jumlah baris matriks A harus sama dengan jumlah kolom matriks B.")
         return None
 
 def kurang_matriks(ordo):
-    matriks_a = [[int(input(f"Masukkan elemen matriks A[{i}][{j}]: ")) for j in range(ordo[0])] for i in range(ordo[1])]
-    matriks_b = [[int(input(f"Masukkan elemen matriks B[{i}][{j}]: ")) for j in range(ordo[0])] for i in range(ordo[1])]
+    matriks_a = [[int(input(f"Masukkan elemen matriks A[{i}][{j}]: ")) for j in range(ordo[1])] for i in range(ordo[0])]
+    matriks_b = [[int(input(f"Masukkan elemen matriks B[{i}][{j}]: ")) for j in range(ordo[1])] for i in range(ordo[0])]
 
     print_equals()
     print_matriks(matriks_a, "A")
@@ -49,7 +51,7 @@ def kurang_matriks(ordo):
 
 print_equals()
 print("Pilih operasi:")
-print("1. Perjumlahan")
+print("1. Penjumlahan")
 print("2. Perkalian")
 print("3. Pengurangan")
 
