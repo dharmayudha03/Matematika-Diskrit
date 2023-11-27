@@ -36,7 +36,7 @@ else:
 
         total_gaji = pemotongan * gapok + tunjangan + transportasi + uang_makan + lemburan
         print(43*"=")
-        print(f"Total gaji Anda: Rp {total_gaji:,.2f}")
+        print(f"Total gaji Anda: Rp {total_gaji:,}")
         print(43*"=")
     else:
         print("Jabatan tidak ditemukan")
