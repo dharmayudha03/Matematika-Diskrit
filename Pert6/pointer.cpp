@@ -23,14 +23,14 @@ int main() {
     int kehadiran, grade, jumlah_lemburan;
     double pemotongan;
 
-    cout << "Jumlah kehadiran dalam 1 Bulan (*25 hari) = ";
+    cout << "Jumlah kehadiran dalam 1 Bulan (*22 hari) = ";
     cin >> kehadiran;
     cout << "Grade (1 ~ 10) = ";
     cin >> grade;
     cout << "Jumlah jam lembur = ";
     cin >> jumlah_lemburan;
 
-    pemotongan = static_cast<double>(kehadiran) / 25;
+    pemotongan = static_cast<double>(kehadiran) / 22;
 
     if (kehadiran <= 0) {
         cout << "Maaf, Anda tidak bekerja, maka tidak ada gaji" << endl;
