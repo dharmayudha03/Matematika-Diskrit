@@ -11,12 +11,12 @@ def vigenere_cipher(pesan, key, mode):
     for char in pesan:
         if char in alphabet:
             posisi_pesan = alphabet.index(char)
-            posisi_key = alphabet.index(key[i]) * 3
+            posisi_key = alphabet.index(key[i])
 
             if mode == 'enkripsi':
-                posisi_hasil = (posisi_pesan + posisi_key) % 26
+                posisi_hasil = (posisi_pesan + posisi_key) * 3 % 26
             elif mode == 'deskripsi':
-                posisi_hasil = (posisi_pesan - posisi_key) % 26
+                posisi_hasil = (posisi_pesan - posisi_key) * 3 % 26
 
             if posisi_hasil < 0:
                 posisi_hasil += 26
