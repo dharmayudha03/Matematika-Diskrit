@@ -18,17 +18,22 @@ def vigenere_cipher(pesan, key, mode):
             elif mode == 'deskripsi':
                 posisi_hasil = (posisi_pesan - posisi_key) % 26
 
+            if posisi_hasil < 0:
+                posisi_hasil += 26
+
             hasil += alphabet[posisi_hasil]
             i = (i + 1) % len(key)
         else:
+            # Jika karakter bukan huruf, biarkan seperti itu (termasuk spasi)
             hasil += char
 
     return hasil
 
 # Input dari pengguna
-pesan = input("Masukkan pesan: ")
-key = input("Masukkan key: ")
+pesan = input("Masukkan pesan (huruf kapital): ")
+key = input("Masukkan key (huruf kapital): ")
 
+# Pemeriksaan input huruf kapital
 if pesan.islower() or key.islower():
     print("Tolong masukkan dengan huruf kapital, Pesan maupun Key.")
 else:
